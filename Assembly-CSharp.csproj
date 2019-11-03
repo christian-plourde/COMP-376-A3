@@ -57,7 +57,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\Gold.cs" />
      <Compile Include="Assets\Scripts\GoldManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerGoldInventory.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Computer Science Assignments/COMP 376 Assignments/COMP 376 A3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
