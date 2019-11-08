@@ -57,10 +57,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoatInventory.cs" />
      <Compile Include="Assets\Scripts\CameraLook.cs" />
+     <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\Gold.cs" />
      <Compile Include="Assets\Scripts\GoldManager.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\PlayerGoldInventory.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Shark.cs" />
      <Compile Include="Assets\Scripts\SharkManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
