@@ -605,6 +605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ef0ff86b9eb6549b10a8accb603270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels_to_speed_double: 10
+  coin_distraction_radius: 30
+  distraction_duration_seconds: 10
 --- !u!1 &3405978181783456506
 GameObject:
   m_ObjectHideFlags: 0

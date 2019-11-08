@@ -7,6 +7,8 @@ public class Controller : MonoBehaviour
     public float move_speed = 5.0f; //the movement speed of the character
     float speed_multiplier = 1.0f;
     public float jet_pack_efficiency = 10.0f;
+    public GameObject coin;
+    public float coin_shoot_force_multiplier;
 
     public float SpeedMultiplier
     {
@@ -42,6 +44,13 @@ public class Controller : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             GetComponent<Rigidbody>().AddForce(new Vector3(0, jet_pack_efficiency * speed_multiplier * 2, 0.0f));
+        }
+
+        //throwing shiny figurines
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            GameObject new_coin = Instantiate(coin, transform.position + transform.forward.normalized*2, Quaternion.identity);
+            new_coin.GetComponent<Rigidbody>().AddForce(transform.forward.normalized * coin_shoot_force_multiplier);
         }
     }
 }
