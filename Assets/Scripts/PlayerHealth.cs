@@ -13,7 +13,8 @@ public class PlayerHealth : MonoBehaviour
     System.DateTime oxygen_start;
     public float cylinder_duration_seconds = 10.0f;
     public Image blood_splatter;
-    public GameObject boat;
+    ScoreManager score_manager;
+    BoatInventory boat_inventory;
 
     public bool IsDead
     {
@@ -52,6 +53,8 @@ public class PlayerHealth : MonoBehaviour
         oxygen_start = System.DateTime.Now;
         health = max_health;
         blood_splatter.color = new Color(blood_splatter.color.r, blood_splatter.color.g, blood_splatter.color.b, 0.0f);
+        score_manager = FindObjectOfType<ScoreManager>();
+        boat_inventory = FindObjectOfType<BoatInventory>();
     }
 
     // Update is called once per frame
@@ -60,6 +63,8 @@ public class PlayerHealth : MonoBehaviour
         if (IsDead)
         {
             Cursor.lockState = CursorLockMode.None;
+            score_manager.LastScore = boat_inventory.Score;
+
             SceneManager.LoadScene("DeathScene");
         }    
 
