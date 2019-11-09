@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public Text life_counter;
     public Image oxygen_indicator;
     System.DateTime oxygen_start;
-    public float cylinder_duration_seconds = 10.0f; 
+    public float cylinder_duration_seconds = 10.0f;
+    public Image blood_splatter;
+    public GameObject boat;
 
     public bool IsDead
     {
@@ -35,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
             health--;
 
         life_counter.text = "Lives: " + health;
+        blood_splatter.color = new Color(blood_splatter.color.r, blood_splatter.color.g, blood_splatter.color.b, 0.5f);
     }
 
     public int Health
@@ -46,15 +50,26 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         oxygen_start = System.DateTime.Now;
-        health = max_health;        
+        health = max_health;
+        blood_splatter.color = new Color(blood_splatter.color.r, blood_splatter.color.g, blood_splatter.color.b, 0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (IsDead)
-            Debug.Log("You Died");
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("DeathScene");
+        }    
+
         oxygen_indicator.rectTransform.offsetMin = new Vector2(oxygen_indicator.rectTransform.offsetMin.x, 100.0f - CurrentOxygen);
+
+        if (CurrentOxygen < 20.0f && Health == max_health)
+            blood_splatter.color = new Color(blood_splatter.color.r, blood_splatter.color.g, blood_splatter.color.b, 0.1f);
+
+        else if(Health == max_health)
+            blood_splatter.color = new Color(blood_splatter.color.r, blood_splatter.color.g, blood_splatter.color.b, 0.0f);
     }
 
     void OnTriggerEnter(Collider col)

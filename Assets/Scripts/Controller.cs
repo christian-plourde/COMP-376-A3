@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
@@ -32,6 +33,14 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player presses escape go back to main menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("MainMenu");
+        }
+            
+
         //forward backward translation
         float front_back = Input.GetAxis("Vertical") * Time.deltaTime * move_speed * speed_multiplier;
         //left right translation

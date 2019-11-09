@@ -8,7 +8,7 @@ public class SharkManager : MonoBehaviour
     public GameObject shark;
     static int shark_count;
     DateTime last_spawn_time;
-    public static int max_shark_count = 8;
+    public static int max_shark_count = 5;
     public int spawn_interval_seconds = 2;
     public float floor_width = 200;
     public float wall_height = 100;
