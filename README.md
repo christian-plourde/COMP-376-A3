@@ -2,7 +2,7 @@
 COMP 376 Assignment 3
 -------------------------------------
 
-Author: Christian Plourde
+Author: Christian Plourde <br />
 Student ID: 26572499
 
 Game developed for COMP 376 in Fall 2019.
@@ -23,11 +23,11 @@ Once in a while (as of level 2), a crab will appear and follow the player with h
 
 Control Scheme:
 --------------------------------------
-W - Move Forward
-S - Move Backward
-A - Strafe Left
-D - Strafe Right
-Space - Boost Upward
-Q - Drop All Gold
-Left Mouse Click - Shoot Coins
+W - Move Forward <br />
+S - Move Backward <br />
+A - Strafe Left <br />
+D - Strafe Right <br />
+Space - Boost Upward <br />
+Q - Drop All Gold <br />
+Left Mouse Click - Shoot Coins <br />
 Escape - Return to Main Menu
